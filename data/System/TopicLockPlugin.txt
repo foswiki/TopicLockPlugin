@@ -1,0 +1,57 @@
+---+!! !TopicLockPlugin
+<!--
+One line description, required for extensions repository catalog.
+BuildContrib will fill in the SHORTDESCRIPTION with the value of
+$SHORTDESCRIPTION from the .pm module, or you can redefine it here if you
+prefer.
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+%SHORTDESCRIPTION%
+
+%TOC%
+
+---++ Usage
+Put the %<nop>TOPICLOCK% macro anywhere in your topic or template. This macro gets expanded to either
+   * a link to lock down the topic (read/write access to current user only)
+   * a link to unlock the topic
+   * a note, that locking down is not allowed
+
+!WikiGuest is always forbidden to change the lock state.
+
+This macro takes the following parameters (all are optional):
+
+| *Parameter* | *Explanation* |
+| =topic= | Default is the current topic. You can specify a different topic here. |
+| =web= | Default is current web. You can specify a different topic here. |
+| =lockformat= | Show this, if the topic is not locked and the user is allowed to lock it. |
+| =unlockformat= | Show this, if the topic is locked. |
+| =forbiddenlockformat= | Show this, if the topic is locked elsewhere or the current user is not allowed to set a lock. |
+
+The format strings may contain a =$url= parameter which gets expanded to the locking-url.
+=$percnt=, =$dollar= and =$n= behave as expected.
+
+---++ Examples
+<verbatim>
+%TOPICLOCK{ lockformat="[[$url][Lock this Topic]]" unlockformat="[[$url][Unlock this Topic]]" forbiddenformat="totally forbidden to lock this Topic" }%
+</verbatim>
+
+---++ Installation Instructions
+
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+Many thanks to the following sponsors for supporting this work:
+   * Acknowledge any sponsors here
+
+|  Author(s): | Foswiki:Main.OliverKrueger |
+|  Copyright: | &copy; 2010 Oliver Krueger, [[http://wiki-one.net/][(wiki-one.net)]] |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home page: | http://foswiki.org/bin/view/Extensions/TopicLockPlugin |
+|  Support: | http://foswiki.org/bin/view/Support/TopicLockPlugin |
+
+<!-- Do _not_ attempt to edit this topic; it is auto-generated. -->
